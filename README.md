@@ -5,14 +5,14 @@ I know there miiighty be... an issue currently. This solves the issue:
 ```
 <script src="https://mktcode.github.io/steemit-widgets/assets/js/steemit-widgets.min.js"></script>
 <script>
-  steem.api.setOptions({ url: 'https://api.steemit.com' }); // <-- ADD THIS
+  steem.api.setOptions({ url: 'https://api.hive.blog' }); // <-- ADD THIS
   steemitWidgets.profile....
   ....(
   ```
 
 # Steemit Widgets
 
-**A simple way to display content from steemit.com on your website.**<br>by [mkt](http://steemit.com/@mkt)
+**A simple way to display content from hive.blog on your website.**<br>by [mkt](http://hive.blog/@mkt)
 
 [Demo](https://mktcode.github.io/steemit-widgets/)
 
@@ -121,8 +121,8 @@ steemitWidgets.profile(options);
 Option | Description | Type | Default
 ------ | ----------- | ---- | -------
 element | Sets the html id of the element in which to show the content. | String | null
-username | Sets the steemit.com username whose profile to show. | String | mkt
-template | Provides the HTML to display the profile. Can be either an HTML string or the ID of a `<template>` tag. | String | `<img width="100" src="${IMAGE}" /><br><a href="https://steemit.com/@${USER}">@${USER}</a>`
+username | Sets the hive.blog username whose profile to show. | String | mkt
+template | Provides the HTML to display the profile. Can be either an HTML string or the ID of a `<template>` tag. | String | `<img width="100" src="${IMAGE}" /><br><a href="https://hive.blog/@${USER}">@${USER}</a>`
 reputationPrecision | Sets the decimal precision for the reputation score. | Integer | 0
 votingPowerPrecision | Sets the decimal precision for the current voting power. | Integer | 2
 updateInterval | Sets the interval in seconds to update the output. Set to 0 to disable updates. | Integer | 60
@@ -133,7 +133,7 @@ createdCallback | Sets a callback function to handle the created date display, f
 Placeholder | Description
 ----------- | -----------
 ${USER} | Outputs the username (without the @).
-${NAME} | Outputs the alternative display name you can set in the steemit.com settings.
+${NAME} | Outputs the alternative display name you can set in the hive.blog settings.
 ${LOCATION} | Outputs the users location.
 ${WEBSITE} | Outputs the users website url.
 ${IMAGE} | Outputs the users profile image url.
@@ -195,7 +195,7 @@ steemitWidgets.feed(options);
 Option | Description | Type | Default
 ------ | ----------- | ---- | -------
 element | Sets the html id of the element in which to show the content. | String | null
-user | Sets the steemit.com username whose blog/feed to show. | String | mkt
+user | Sets the hive.blog username whose blog/feed to show. | String | mkt
 limit | Sets the number of posts to show. | Integer | 10
 template | Provides the HTML to display the posts. Can be either an HTML string or the ID of a `<template>` tag. | String | `<div><a href="${URL}">${TITLE}</a>${RESTEEMED}<br>${Payout}, ${UPVOTES} Upvotes, ${COMMENTS} Comments</div>`
 defaultImage | Sets the URL for a default image if there is no post image. | String | [show](https://steemitimages.com/DQmXYX9hqSNcikTK8ARb61BPnTk4CKMhaiqr22iCKD8CKsp/steemit-logo.png)
@@ -277,7 +277,7 @@ payoutPrecision | Sets the decimal precision for the payout amount. | Integer | 
 reputationPrecision | Sets the decimal precision for the reputation score. | Integer | 0
 dateCallback | Sets a callback function to handle the date display, for example with moment.js. | Function | `function (date) {return date;}`
 bodyCallback | Sets a callback function to handle the body display, for example with https://github.com/jonschlinkert/remarkable. | Integer | `function (body) {return body;}`
-tagsCallback | Sets a callback function to handle the tags display. | Integer | `function (tags) { let tagsHtml = '', i; for (i = 0; i < tags.length; i++) { tagsHtml += '<a href="https://steemit.com/trending/' + tags[i] + '">' + tags[i] + '</a>'; } return '<div class="steemit-full-post-tags">' + tagsHtml + '</div>'; }`
+tagsCallback | Sets a callback function to handle the tags display. | Integer | `function (tags) { let tagsHtml = '', i; for (i = 0; i < tags.length; i++) { tagsHtml += '<a href="https://hive.blog/trending/' + tags[i] + '">' + tags[i] + '</a>'; } return '<div class="steemit-full-post-tags">' + tagsHtml + '</div>'; }`
 
 
 #### Placeholders
@@ -298,7 +298,7 @@ ${TAGS} | Outputs the post's tags (link). Can be customized using the `tagsCallb
 
 ## Formatting Post Dates
 
-If you want to format the post dates you can use the `dateCallback` option. Here is an example of how to display realtive times like "1 hour ago" like on steemit.com with [moment.js](https://momentjs.com).
+If you want to format the post dates you can use the `dateCallback` option. Here is an example of how to display realtive times like "1 hour ago" like on hive.blog with [moment.js](https://momentjs.com).
 
 ```html
 <script src="https://cdn.steemjs.com/lib/latest/steem.min.js"></script>
@@ -315,7 +315,7 @@ If you want to format the post dates you can use the `dateCallback` option. Here
 </script>
 ```
 
-You have to be careful because javascript works with your local time which might be different from what steemit.com shows. The above example takes care of this by converting dates to UTC.
+You have to be careful because javascript works with your local time which might be different from what hive.blog shows. The above example takes care of this by converting dates to UTC.
 
 ## jQuery Usage
 
